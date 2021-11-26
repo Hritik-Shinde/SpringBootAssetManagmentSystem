@@ -89,13 +89,19 @@ public class AdminController {
 		return mv;
 	}
 	//dashboard
-//	@RequestMapping(value = "/dashboard")
-//	public ModelAndView viewDashBoard(ModelAndView mv) {
-//		String message = "Welcome To Krios";
-//		mv.addObject("message", message);
-//		return mv;
-//	}
+	@RequestMapping(value = "/dashboard")
+	public ModelAndView viewDashBoard(ModelAndView mv) {
+		String message = "Welcome To Krios";
+		mv.addObject("message", message);
+		return mv;
+	}
 
+	@RequestMapping(value = "/employeereg")
+	public ModelAndView employeeRegestration(ModelAndView mv) {
+		String message = "Welcome To Krios";
+		mv.addObject("message", message);
+		return mv;
+	}
 
 //	@GetMapping("/viewAdminById/{adminId}")
 //	public ResponseEntity<AdminBean> viewAdmin(@PathVariable(value = "adminId") int adminId) {
