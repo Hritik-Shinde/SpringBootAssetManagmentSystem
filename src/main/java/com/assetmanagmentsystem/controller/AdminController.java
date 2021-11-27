@@ -35,10 +35,10 @@ public class AdminController {
 //		adminService.addAdmin(adminBean);
 //		return new ResponseEntity<>(HttpStatus.CREATED);
 //	}
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public ModelAndView addAdmin(ModelAndView mv) {
-		return mv;
-	}
+//	@RequestMapping(value = "/index", method = RequestMethod.GET)
+//	public ModelAndView addAdmin(ModelAndView mv) {
+//		return mv;
+//	}
 	//add Admin Data
 	@RequestMapping(value = "/addAdminData", method = RequestMethod.GET)
 	public ModelAndView addAdminData(ModelAndView mv, @ModelAttribute("adminBean") AdminBean adminBean) {

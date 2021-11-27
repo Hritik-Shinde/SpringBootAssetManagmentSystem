@@ -225,7 +225,7 @@ body{
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="dashboard" class="login">
                   <div class="field">
                      <input type="text" placeholder="Email Address" required>
                   </div>
