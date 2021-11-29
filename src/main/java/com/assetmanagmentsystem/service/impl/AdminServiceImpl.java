@@ -1,9 +1,11 @@
 package com.assetmanagmentsystem.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import com.assetmanagmentsystem.bean.AdminBean;
@@ -44,19 +46,47 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public List<AdminBean> viewAllAdmin() {
 		// TODO Auto-generated method stub
-		return null;
+		List<AdminBean> adminBean = new ArrayList<>();
+		List<Admin> admin = adminRepositry.findAll();
+		if(CollectionUtils.isEmpty(admin))
+		{
+			admin.forEach(b -> adminBean.add(adminMapper.maptoBean(b)));
+		}
+		return adminBean;
 	}
 
 	@Override
 	public void editAdmin(AdminBean adminBean) {
 		// TODO Auto-generated method stub
+		Optional<Admin> adminOptional = adminRepositry.findById(adminBean.getAdminId());
+		if(adminOptional.isPresent())
+		{
+			Admin admin = adminOptional.get();
+			
+			
+			adminRepositry.save(admin);
+		}
 		
 	}
 
 	@Override
 	public void deleteAdmin(int adminId) {
 		// TODO Auto-generated method stub
+		Optional<Admin> plyareOptional = adminRepositry.findById(adminId);
+		if(plyareOptional.isPresent()) {
+			Admin admin = plyareOptional.get();
+			
+			adminRepositry.delete(admin);
+		}
 		
 	}
 
+	@Override
+	public Admin findByAdminNameAndPassword(String string, String string2) {
+		Admin admin= adminRepositry.findByUserIdAndPassword(string,string2);
+		System.out.println(admin);
+		return admin;
+	}
+
+	
 }

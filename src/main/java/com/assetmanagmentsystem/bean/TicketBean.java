@@ -1,16 +1,16 @@
 package com.assetmanagmentsystem.bean;
 
 import java.sql.Date;
+import java.util.Objects;
 
 
 public class TicketBean {
 	private int ticketId;
-	private int empId;
-	private String empName;
-	private String assetName;
-	private int assetId;
+	int empId;
+	int assetId;
+	private String status;
 	private Date ticketRaiseDate;
-	private String issueRaise;
+	private Date dateModify;
 	public int getTicketId() {
 		return ticketId;
 	}
@@ -23,23 +23,17 @@ public class TicketBean {
 	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
-	public String getEmpName() {
-		return empName;
-	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
-	public String getAssetName() {
-		return assetName;
-	}
-	public void setAssetName(String assetName) {
-		this.assetName = assetName;
-	}
 	public int getAssetId() {
 		return assetId;
 	}
 	public void setAssetId(int assetId) {
 		this.assetId = assetId;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public Date getTicketRaiseDate() {
 		return ticketRaiseDate;
@@ -47,18 +41,33 @@ public class TicketBean {
 	public void setTicketRaiseDate(Date ticketRaiseDate) {
 		this.ticketRaiseDate = ticketRaiseDate;
 	}
-	public String getIssueRaise() {
-		return issueRaise;
+	public Date getDateModify() {
+		return dateModify;
 	}
-	public void setIssueRaise(String issueRaise) {
-		this.issueRaise = issueRaise;
+	public void setDateModify(Date dateModify) {
+		this.dateModify = dateModify;
 	}
 	@Override
 	public String toString() {
-		return "TicketBean [ticketId=" + ticketId + ", empId=" + empId + ", empName=" + empName + ", assetName="
-				+ assetName + ", assetId=" + assetId + ", ticketRaiseDate=" + ticketRaiseDate + ", issueRaise="
-				+ issueRaise + "]";
+		return "TicketBean [ticketId=" + ticketId + ", empId=" + empId + ", assetId=" + assetId + ", status=" + status
+				+ ", ticketRaiseDate=" + ticketRaiseDate + ", dateModify=" + dateModify + "]";
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(assetId, dateModify, empId, status, ticketId, ticketRaiseDate);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof TicketBean))
+			return false;
+		TicketBean other = (TicketBean) obj;
+		return assetId == other.assetId && Objects.equals(dateModify, other.dateModify) && empId == other.empId
+				&& Objects.equals(status, other.status) && ticketId == other.ticketId
+				&& Objects.equals(ticketRaiseDate, other.ticketRaiseDate);
+	}
+	
 	
 
 }

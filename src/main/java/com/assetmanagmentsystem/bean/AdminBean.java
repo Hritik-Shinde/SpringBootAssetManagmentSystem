@@ -1,6 +1,13 @@
 package com.assetmanagmentsystem.bean;
 
-
+/**
+ * 
+ * @author swati / Hritik
+ * date 22/11/21
+ * login mapping 
+ * dashboard mapping 
+ * employee //temporary
+ */
 public class AdminBean {
 	private int adminId;
 	private String adminName;

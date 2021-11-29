@@ -1,7 +1,14 @@
 package com.assetmanagmentsystem.bean;
 
 import java.util.List;
-
+/**
+ * 
+ * @author swati / Hritik
+ * date 22/11/21
+ * login mapping 
+ * dashboard mapping 
+ * employee //temporary
+ */
 public class ResposeAdmin {
 	private String message;
 	private List<AdminBean> listBeans;

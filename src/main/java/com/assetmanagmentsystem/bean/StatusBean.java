@@ -2,7 +2,12 @@ package com.assetmanagmentsystem.bean;
 
 import java.sql.Date;
 
-
+/**
+ * 
+ * @author swati / Hritik
+ * date 22/11/21
+ * 
+ */
 public class StatusBean {
 	private int empId;
 	private String empName;

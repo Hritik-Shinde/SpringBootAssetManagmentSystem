@@ -1,28 +1,23 @@
 package com.assetmanagmentsystem.bean;
 
+import java.util.Objects;
 
+/**
+ * 
+ * @author swati / Hritik
+ * date 22/11/21
+ * 
+ */
 public class AssetBean {
 	private int assetId;
-	private int totalStock;
-	private String assignStock;
 	private String typeOfAsset;
+	private String avaliablecount;
+	int vendorId;
 	public int getAssetId() {
 		return assetId;
 	}
 	public void setAssetId(int assetId) {
 		this.assetId = assetId;
-	}
-	public int getTotalStock() {
-		return totalStock;
-	}
-	public void setTotalStock(int totalStock) {
-		this.totalStock = totalStock;
-	}
-	public String getAssignStock() {
-		return assignStock;
-	}
-	public void setAssignStock(String assignStock) {
-		this.assignStock = assignStock;
 	}
 	public String getTypeOfAsset() {
 		return typeOfAsset;
@@ -30,10 +25,37 @@ public class AssetBean {
 	public void setTypeOfAsset(String typeOfAsset) {
 		this.typeOfAsset = typeOfAsset;
 	}
+	public String getAvaliablecount() {
+		return avaliablecount;
+	}
+	public void setAvaliablecount(String avaliablecount) {
+		this.avaliablecount = avaliablecount;
+	}
+	public int getVendorId() {
+		return vendorId;
+	}
+	public void setVendorId(int vendorId) {
+		this.vendorId = vendorId;
+	}
 	@Override
 	public String toString() {
-		return "AssetBean [assetId=" + assetId + ", totalStock=" + totalStock + ", assignStock=" + assignStock
-				+ ", typeOfAsset=" + typeOfAsset + "]";
+		return "AssetBean [assetId=" + assetId + ", typeOfAsset=" + typeOfAsset + ", avaliablecount=" + avaliablecount
+				+ ", vendorId=" + vendorId + "]";
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(assetId, avaliablecount, typeOfAsset, vendorId);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof AssetBean))
+			return false;
+		AssetBean other = (AssetBean) obj;
+		return assetId == other.assetId && Objects.equals(avaliablecount, other.avaliablecount)
+				&& Objects.equals(typeOfAsset, other.typeOfAsset) && vendorId == other.vendorId;
+	}
+
 	
 }

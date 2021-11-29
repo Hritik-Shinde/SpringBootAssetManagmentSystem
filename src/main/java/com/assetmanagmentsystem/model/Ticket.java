@@ -1,6 +1,7 @@
 package com.assetmanagmentsystem.model;
 
 import java.sql.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,80 +16,74 @@ public class Ticket {
 	@Column(name = "ticketId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ticketId;
-	@Column(name = "empId")
-	private int empId;
-	@Column(name = "empName")
-	private String empName;
-	@Column(name = "assetName")
-	private String assetName;
-	@Column(name = "assetId")
-	private int assetId;
+	//
+	int empId;
+	//
+	int assetId;
+	@Column(name = "status")
+	private String status;
 	@Column(name = "ticketRaiseDate")
 	private Date ticketRaiseDate;
-	@Column(name = "issueRaise")
-	private String issueRaise;
-
+	@Column(name = "dateModify")
+	private Date dateModify;
 	public int getTicketId() {
 		return ticketId;
 	}
-
 	public void setTicketId(int ticketId) {
 		this.ticketId = ticketId;
 	}
-
-	public String getEmpName() {
-		return empName;
-	}
-
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
-
 	public int getEmpId() {
 		return empId;
 	}
-
 	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
-
-	public String getAssetName() {
-		return assetName;
-	}
-
-	public void setAssetName(String assetName) {
-		this.assetName = assetName;
-	}
-
 	public int getAssetId() {
 		return assetId;
 	}
-
 	public void setAssetId(int assetId) {
 		this.assetId = assetId;
 	}
-
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public Date getTicketRaiseDate() {
 		return ticketRaiseDate;
 	}
-
 	public void setTicketRaiseDate(Date ticketRaiseDate) {
 		this.ticketRaiseDate = ticketRaiseDate;
 	}
-
-	public String getIssueRaise() {
-		return issueRaise;
+	public Date getDateModify() {
+		return dateModify;
 	}
-
-	public void setIssueRaise(String issueRaise) {
-		this.issueRaise = issueRaise;
+	public void setDateModify(Date dateModify) {
+		this.dateModify = dateModify;
 	}
-
 	@Override
 	public String toString() {
-		return "Ticket [ticketId=" + ticketId + ", empId=" + empId + ", empName=" + empName + ", assetName=" + assetName
-				+ ", assetId=" + assetId + ", ticketRaiseDate=" + ticketRaiseDate + ", issueRaise=" + issueRaise + "]";
+		return "Ticket [ticketId=" + ticketId + ", empId=" + empId + ", assetId=" + assetId + ", status=" + status
+				+ ", ticketRaiseDate=" + ticketRaiseDate + ", dateModify=" + dateModify + "]";
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(assetId, dateModify, empId, status, ticketId, ticketRaiseDate);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Ticket))
+			return false;
+		Ticket other = (Ticket) obj;
+		return assetId == other.assetId && Objects.equals(dateModify, other.dateModify) && empId == other.empId
+				&& Objects.equals(status, other.status) && ticketId == other.ticketId
+				&& Objects.equals(ticketRaiseDate, other.ticketRaiseDate);
+	}
+
+	
 
 
 

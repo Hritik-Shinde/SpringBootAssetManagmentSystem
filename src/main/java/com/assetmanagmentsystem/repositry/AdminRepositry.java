@@ -8,6 +8,9 @@ import com.assetmanagmentsystem.model.Admin;
 
 @Repository
 public interface AdminRepositry extends JpaRepository<Admin, Integer>{
+
+	
+	Admin findByUserIdAndPassword(String string, String string2);
 	
 
 }
