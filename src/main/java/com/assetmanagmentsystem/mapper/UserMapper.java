@@ -13,6 +13,7 @@ public class UserMapper {
 		bean.setUserName(user.getUserName());
 		bean.setPassword(user.getPassword());
 		bean.setUserStatus(user.getUserStatus());
+		bean.setUserType(user.getUserType());
 		return bean;
 
 	}
@@ -23,6 +24,7 @@ public class UserMapper {
 		User.setUserName(UserBean.getUserName());
 		User.setPassword(UserBean.getPassword());
 		User.setUserStatus(UserBean.getUserStatus());
+		User.setUserType(UserBean.getUserType());
 		return User;
 	}
 }

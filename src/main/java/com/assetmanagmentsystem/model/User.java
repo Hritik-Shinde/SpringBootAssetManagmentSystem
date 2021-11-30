@@ -26,6 +26,14 @@ public class User {
 	Date dateCreated;
 	@Column(name = "dateModefieDate")
 	Date dateModefieDate;
+	@Column(name = "userType")
+	String userType;
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public int getUser_id() {
 		return user_id;
 	}
@@ -65,11 +73,12 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [user_id=" + user_id + ", userName=" + userName + ", password=" + password + ", userStatus="
-				+ userStatus + ", dateCreated=" + dateCreated + ", dateModefieDate=" + dateModefieDate + "]";
+				+ userStatus + ", dateCreated=" + dateCreated + ", dateModefieDate=" + dateModefieDate + ", userType="
+				+ userType + "]";
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(dateCreated, dateModefieDate, password, userName, userStatus, user_id);
+		return Objects.hash(dateCreated, dateModefieDate, password, userName, userStatus, userType, user_id);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -80,6 +89,8 @@ public class User {
 		User other = (User) obj;
 		return Objects.equals(dateCreated, other.dateCreated) && Objects.equals(dateModefieDate, other.dateModefieDate)
 				&& Objects.equals(password, other.password) && Objects.equals(userName, other.userName)
-				&& Objects.equals(userStatus, other.userStatus) && user_id == other.user_id;
+				&& Objects.equals(userStatus, other.userStatus) && Objects.equals(userType, other.userType)
+				&& user_id == other.user_id;
 	}
+	
 }
