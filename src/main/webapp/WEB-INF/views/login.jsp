@@ -275,7 +275,7 @@ body {
 			</div>
 			<br>
 			<br>
-			<form action="/empdashboard" class="employeelogin">
+			<%-- <form action="/empdashboard" class="employeelogin">
 					<div class="field">
 						<input type="text" placeholder="Email Address" required>
 					</div>
@@ -286,7 +286,7 @@ body {
 						<div class="btn-layer"></div>
 						<input type="submit" value="Login">
 					</div>
-				</form>
+				</form> --%>
 		</div>
 	</div>
 	<script>
