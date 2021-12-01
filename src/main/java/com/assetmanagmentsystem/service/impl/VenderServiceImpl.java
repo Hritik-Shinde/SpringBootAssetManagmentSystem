@@ -27,10 +27,10 @@ public class VenderServiceImpl implements VenderService {
 	private VenderMapper venderMapper;
 
 	@Override
-	public void addVender(VenderBean venderBean) {
+	public String addVender(Vender vender) {
 		// TODO Auto-generated method stub
-		Vender vender = venderMapper.maptoEntity(venderBean);
 		venderRepositry.save(vender);
+		return "success";
 
 	}
 

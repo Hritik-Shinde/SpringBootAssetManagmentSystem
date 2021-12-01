@@ -3,9 +3,10 @@ package com.assetmanagmentsystem.service;
 import java.util.List;
 
 import com.assetmanagmentsystem.bean.VenderBean;
+import com.assetmanagmentsystem.model.Vender;
 
 public interface VenderService {
-	void addVender(VenderBean venderBean);
+	String addVender(Vender vender);
 
 	VenderBean viewVenderById(int empId);
 

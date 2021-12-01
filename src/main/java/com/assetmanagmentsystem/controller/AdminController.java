@@ -58,6 +58,11 @@ public class AdminController {
 		m.addAttribute("command", new Employee());
 		return mv;
 	}
+	@RequestMapping(value = "/vendorregestrationform")
+	public ModelAndView venderRegestration(ModelAndView mv ,Model m) {
+		m.addAttribute("command", new Employee());
+		return mv;
+	}
 //	@RequestMapping(value = "/register")
 //	public ModelAndView employeeRegestration(@ModelAttribute("empBean") EmployeeBean empBean ) {
 //

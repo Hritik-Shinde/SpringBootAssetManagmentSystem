@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name = "Vendor")
+@Table(name = "Vender")
 public class Vender {
 	@Id
 	@Column(name = "venderId")
