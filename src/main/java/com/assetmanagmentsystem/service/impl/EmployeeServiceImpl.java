@@ -5,14 +5,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import com.assetmanagmentsystem.bean.AdminBean;
 import com.assetmanagmentsystem.bean.EmployeeBean;
 import com.assetmanagmentsystem.mapper.EmployeeMapper;
-import com.assetmanagmentsystem.model.Admin;
 import com.assetmanagmentsystem.model.Employee;
 import com.assetmanagmentsystem.repositry.EmployeeRepositry;
 import com.assetmanagmentsystem.service.EmployeeService;
@@ -24,10 +21,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Autowired
 	private EmployeeMapper employeeMapper;
 	@Override
-	public void addEmployee(EmployeeBean employeeBean) {
-		// TODO Auto-generated method stub
-		Employee employee = employeeMapper.maptoEntity(employeeBean);
+	public String addEmployee(Employee employee) {
+		// TODO Auto-generated method stub\
+		System.out.println("service methord"+employee);
 		employeeRepositry.save(employee);
+		return "sucess";
 	}
 
 	@Override
@@ -66,7 +64,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 			employee.setEmpId(employeeBean.getEmpId());
 			employee.setEmpName(employeeBean.getEmpName());
 			employee.setEmpLastName(employeeBean.getEmpLastName());
-			employee.setMaterialStatus(employeeBean.getMaterialStatus());
+//			employee.setMaterialStatus(employeeBean.getMaterialStatus());
 			employee.setDateOBPlace(employeeBean.getDateOBPlace());
 			employee.setMobileNo(employeeBean.getMobileNo());
 			employee.setEmailId(employeeBean.getEmailId());

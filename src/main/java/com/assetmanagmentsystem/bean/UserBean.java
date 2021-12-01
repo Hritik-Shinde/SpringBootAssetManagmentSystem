@@ -1,6 +1,5 @@
 package com.assetmanagmentsystem.bean;
 
-import java.net.PasswordAuthentication;
 import java.sql.Date;
 import java.util.Objects;
 

@@ -3,9 +3,10 @@ package com.assetmanagmentsystem.service;
 import java.util.List;
 
 import com.assetmanagmentsystem.bean.EmployeeBean;
+import com.assetmanagmentsystem.model.Employee;
 
 public interface EmployeeService {
-	void addEmployee(EmployeeBean employeeBean);
+	String addEmployee(Employee employee);
 
 	EmployeeBean viewEmployeeById(int empId);
 

@@ -271,7 +271,11 @@ body {
 						<!---- Not a member? <a href="">Signup now</a>   -->
 					</div>
 				</form>
-				<form action="#" class="employeelogin">
+				
+			</div>
+			<br>
+			<br>
+			<form action="/empdashboard" class="employeelogin">
 					<div class="field">
 						<input type="text" placeholder="Email Address" required>
 					</div>
@@ -283,7 +287,6 @@ body {
 						<input type="submit" value="Login">
 					</div>
 				</form>
-			</div>
 		</div>
 	</div>
 	<script>

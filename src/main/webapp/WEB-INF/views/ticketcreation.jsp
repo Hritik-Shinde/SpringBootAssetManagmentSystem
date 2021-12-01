@@ -18,6 +18,7 @@
         </style>
 </head>
 <body>
+<jsp:include page="dashboard.jsp"></jsp:include>
 <div class="modal-header">
  <h5 class="modal-title">New ticket</h5>
 

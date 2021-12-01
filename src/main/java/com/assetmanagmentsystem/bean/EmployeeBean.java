@@ -14,7 +14,7 @@ public class EmployeeBean {
 	private int mobileNo;
 	private String empName;
 	private String empLastName;
-	private String materialStatus;
+//	private String materialStatus;
 	private String dateOBPlace;
 	private String bloodGroup;
 	private String department;
@@ -40,12 +40,12 @@ public class EmployeeBean {
 	public void setEmpLastName(String empLastName) {
 		this.empLastName = empLastName;
 	}
-	public String getMaterialStatus() {
-		return materialStatus;
-	}
-	public void setMaterialStatus(String materialStatus) {
-		this.materialStatus = materialStatus;
-	}
+//	public String getMaterialStatus() {
+//		return materialStatus;
+//	}
+//	public void setMaterialStatus(String materialStatus) {
+//		this.materialStatus = materialStatus;
+//	}
 	public String getDateOBPlace() {
 		return dateOBPlace;
 	}
@@ -133,7 +133,7 @@ public class EmployeeBean {
 	@Override
 	public String toString() {
 		return "EmployeeBean [empId=" + empId + ", mobileNo=" + mobileNo + ", empName=" + empName + ", empLastName="
-				+ empLastName + ", materialStatus=" + materialStatus + ", dateOBPlace=" + dateOBPlace + ", bloodGroup="
+				+ empLastName + ", dateOBPlace=" + dateOBPlace + ", bloodGroup="
 				+ bloodGroup + ", department=" + department + ", gender=" + gender + ", country=" + country + ", state="
 				+ state + ", city=" + city + ", address=" + address + ", emailId=" + emailId + ", password=" + password
 				+ ", dateOB=" + dateOB + ", joiningDate=" + joiningDate + "]";

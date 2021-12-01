@@ -1,6 +1,5 @@
 package com.assetmanagmentsystem.mapper;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import com.assetmanagmentsystem.bean.EmployeeBean;
@@ -15,7 +14,7 @@ public class EmployeeMapper {
 		bean.setEmpId(employee.getEmpId());
 		bean.setEmpName(employee.getEmpName());
 		bean.setEmpLastName(employee.getEmpLastName());
-		bean.setMaterialStatus(employee.getMaterialStatus());
+//		bean.setMaterialStatus(employee.getMaterialStatus());
 		bean.setDateOBPlace(employee.getDateOBPlace());
 		bean.setMobileNo(employee.getMobileNo());
 		bean.setEmailId(employee.getEmailId());
@@ -37,7 +36,7 @@ public class EmployeeMapper {
 		employee.setEmpId(employeeBean.getEmpId());
 		employee.setEmpName(employeeBean.getEmpName());
 		employee.setEmpLastName(employeeBean.getEmpLastName());
-		employee.setMaterialStatus(employeeBean.getMaterialStatus());
+//		employee.setMaterialStatus(employeeBean.getMaterialStatus());
 		employee.setDateOBPlace(employeeBean.getDateOBPlace());
 		employee.setMobileNo(employeeBean.getMobileNo());
 		employee.setEmailId(employeeBean.getEmailId());

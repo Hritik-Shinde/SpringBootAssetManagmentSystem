@@ -21,8 +21,8 @@ public class Employee {
 	private String empLastName;
 	@Column(name = "mobileNo")
 	private int mobileNo;
-	@Column(name = "materialStatus")
-	private String materialStatus;
+//	@Column(name = "materialStatus")
+//	private String materialStatus;
 	@Column(name = "dateOBPlace")
 	private String dateOBPlace;
 	@Column(name = "bloodGroup")
@@ -71,12 +71,12 @@ public class Employee {
 	public void setMobileNo(int mobileNo) {
 		this.mobileNo = mobileNo;
 	}
-	public String getMaterialStatus() {
-		return materialStatus;
-	}
-	public void setMaterialStatus(String materialStatus) {
-		this.materialStatus = materialStatus;
-	}
+//	public String getMaterialStatus() {
+//		return materialStatus;
+//	}
+//	public void setMaterialStatus(String materialStatus) {
+//		this.materialStatus = materialStatus;
+//	}
 	public String getDateOBPlace() {
 		return dateOBPlace;
 	}
@@ -152,7 +152,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empLastName=" + empLastName + ", mobileNo="
-				+ mobileNo + ", materialStatus=" + materialStatus + ", dateOBPlace=" + dateOBPlace + ", bloodGroup="
+				+ mobileNo + ", dateOBPlace=" + dateOBPlace + ", bloodGroup="
 				+ bloodGroup + ", department=" + department + ", gender=" + gender + ", country=" + country + ", state="
 				+ state + ", city=" + city + ", address=" + address + ", emailId=" + emailId + ", password=" + password
 				+ ", dateOB=" + dateOB + ", joiningDate=" + joiningDate + "]";

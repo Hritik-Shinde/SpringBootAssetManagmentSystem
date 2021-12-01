@@ -1,14 +1,18 @@
 package com.assetmanagmentsystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.assetmanagmentsystem.model.Admin;
+import com.assetmanagmentsystem.model.Employee;
 import com.assetmanagmentsystem.service.AdminService;
+import com.assetmanagmentsystem.service.EmployeeService;
 
 /**
  * 
@@ -24,6 +28,8 @@ public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private EmployeeService employeeService;
 	
 	
 	
@@ -47,26 +53,20 @@ public class AdminController {
 		}
 		
 	}
-//	 @PostMapping("/loginAdmin")
-//		public String login(@ModelAttribute("user") Login user) 
-//		{
-//			Login oauthUser = userService.login(user.getUsername(), user.getPassword());
-//	    	
-//	    	 
-//			System.out.print(oauthUser);
-//			if(oauthUser==null)
-//			{
-//				
-//				return "redirect:/login";
-//				
-//			}
-//			else
-//			{
-//				return "index";
-//				 
-//			}
-//			
-//	   	}
+	@RequestMapping(value = "/employeeregestrationform")
+	public ModelAndView employeeRegestration(ModelAndView mv ,Model m) {
+		m.addAttribute("command", new Employee());
+		return mv;
+	}
+//	@RequestMapping(value = "/register")
+//	public ModelAndView employeeRegestration(@ModelAttribute("empBean") EmployeeBean empBean ) {
+//
+//		 empService.addEmployee(empBean);
+//		ModelAndView mav = new ModelAndView("dashboard");
+//		return mav;
+//	}
+	
+
 	
 //	@RequestMapping(value = "/addadmin",method = RequestMethord.GET)
 
@@ -163,4 +163,5 @@ public class AdminController {
 //		AdminBean adminBean = adminService.viewAdminById(adminId);
 //		return new ResponseEntity<>(adminBean, HttpStatus.OK);
 //	}
+	
 }
