@@ -12,6 +12,8 @@ public class AssetMapper {
 		bean.setAssetId(asset.getAssetId());
 		bean.setTypeOfAsset(asset.getTypeOfAsset());
 		bean.setAvaliablecount(asset.getAvaliablecount());
+		bean.setAssetBrand(asset.getAssetBrand());
+		bean.setAssetDate(asset.getAssetDate());
 		return bean;
 
 	}
@@ -21,6 +23,9 @@ public class AssetMapper {
 		asset.setAssetId(assetBean.getAssetId());
 		asset.setTypeOfAsset(assetBean.getTypeOfAsset());
 		asset.setAvaliablecount(assetBean.getAvaliablecount());
+		asset.setAssetBrand(assetBean.getAssetBrand());
+		asset.setAssetDate(assetBean.getAssetDate());
+		asset.setAssetDate(assetBean.getAssetDate());
 		return asset;
 	}
 	

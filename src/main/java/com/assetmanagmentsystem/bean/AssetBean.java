@@ -1,5 +1,6 @@
 package com.assetmanagmentsystem.bean;
 
+import java.sql.Date;
 import java.util.Objects;
 
 /**
@@ -11,7 +12,15 @@ import java.util.Objects;
 public class AssetBean {
 	private int assetId;
 	private String typeOfAsset;
+	private String assetBrand;
 	private String avaliablecount;
+	private Date assetDate;
+	public Date getAssetDate() {
+		return assetDate;
+	}
+	public void setAssetDate(Date assetDate) {
+		this.assetDate = assetDate;
+	}
 	int vendorId;
 	public int getAssetId() {
 		return assetId;
@@ -55,6 +64,12 @@ public class AssetBean {
 		AssetBean other = (AssetBean) obj;
 		return assetId == other.assetId && Objects.equals(avaliablecount, other.avaliablecount)
 				&& Objects.equals(typeOfAsset, other.typeOfAsset) && vendorId == other.vendorId;
+	}
+	public String getAssetBrand() {
+		return assetBrand;
+	}
+	public void setAssetBrand(String assetBrand) {
+		this.assetBrand = assetBrand;
 	}
 
 	

@@ -1,5 +1,6 @@
 package com.assetmanagmentsystem.model;
 
+import java.sql.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -20,8 +21,25 @@ public class Asset {
 	private String typeOfAsset;
 	@Column(name = "avaliablecount")
 	private String avaliablecount;
+	@Column(name = "assetBrand")
+	private String assetBrand;
+	@Column(name="assetexpiredate")
+	private Date assetDate;
+	
+	public Date getAssetDate() {
+		return assetDate;
+	}
+	public void setAssetDate(Date assetDate) {
+		this.assetDate = assetDate;
+	}
 	//vendero forign key
 	int vendorId;
+	public String getAssetBrand() {
+		return assetBrand;
+	}
+	public void setAssetBrand(String assetBrand) {
+		this.assetBrand = assetBrand;
+	}
 	public int getAssetId() {
 		return assetId;
 	}

@@ -1,10 +1,11 @@
 package com.assetmanagmentsystem.service;
 
 import com.assetmanagmentsystem.bean.AssetBean;
+import com.assetmanagmentsystem.model.Asset;
 
 
 public interface AssetService {
-	void addAsset(AssetBean assetBean);
+	String addAsset(Asset asset);
 
 	AssetBean viewAssetById(int empId);
 

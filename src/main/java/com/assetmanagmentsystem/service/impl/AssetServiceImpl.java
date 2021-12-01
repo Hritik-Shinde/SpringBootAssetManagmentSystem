@@ -24,10 +24,10 @@ public class AssetServiceImpl implements AssetService{
 	@Autowired
 	private AssetMapper assetMapper;
 	@Override
-	public void addAsset(AssetBean assetBean) {
+	public String addAsset(Asset asset) {
 		// TODO Auto-generated method stub
-		Asset asset = assetMapper.maptoEntity(assetBean);
 		assetRepositry.save(asset);
+		return "sucess";
 		
 	}
 	@Override

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.assetmanagmentsystem.model.Admin;
+import com.assetmanagmentsystem.model.Asset;
 import com.assetmanagmentsystem.model.Employee;
+import com.assetmanagmentsystem.model.Vender;
 import com.assetmanagmentsystem.service.AdminService;
 import com.assetmanagmentsystem.service.EmployeeService;
 
@@ -60,7 +62,13 @@ public class AdminController {
 	}
 	@RequestMapping(value = "/vendorregestrationform")
 	public ModelAndView venderRegestration(ModelAndView mv ,Model m) {
-		m.addAttribute("command", new Employee());
+		m.addAttribute("command", new Vender());
+		return mv;
+	}
+	
+	@RequestMapping(value = "/addassetform")
+	public ModelAndView assetRegestration(ModelAndView mv ,Model m) {
+		m.addAttribute("command", new Asset());
 		return mv;
 	}
 //	@RequestMapping(value = "/register")
