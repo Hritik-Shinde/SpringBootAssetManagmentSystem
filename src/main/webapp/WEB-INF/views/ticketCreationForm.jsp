@@ -17,7 +17,6 @@
 </head>
 <style>
 h2 {
-	height: 80%;
 	color: white;
 }
 
@@ -32,7 +31,7 @@ th {
 }
 
 input, select {
-	height: 80%;
+	height: 30%;
 	width: 100%;
 }
 </style>
@@ -40,58 +39,32 @@ input, select {
 	style='background-color: red:purple; background-image: url("/images/empRegBackground.jpg")'>
 	<jsp:include page="dashboard.jsp"></jsp:include>
 	<div align="center">
-		<h2>Add Asset</h2>
+		<h2>Ticket Creation Form</h2>
 		<br>
 		<%-- <form action="<%=request.getContextPath()%>/register" method="post"> --%>
-		<form action="/assetregister" method="post">
+		<form action="/ticketregister" method="post">
 			<table style="with: 80%">
-				
-				
-				
-
 				<tr>
-					<th>Asset Type:*</th>
-					<td><select name="typeOfAsset" id="typeOfAsset">
-							<option value="1">Choose option</option>
-							<option value="Laptop">Laptop</option>
-							<option value="Mouse">Mouse</option>
-							<option value="Keyboard">Keyboard</option>
-							<option value="HeadPhone">Headphone</option>
-							<option value="Charger">Charger</option>
-
-					</select></td>
+					<th>Status*:</th>
+					<td><input type="text" name="status" /></td>
 				</tr>
-				
-					<tr>
-					<th>Number of Asset Avaliable *:</th>
-					<td><input type="number" name="avaliablecount" /></td>
-				</tr>
-				
 				<tr>
-					<th>Asset Brand :*</th>
-					<td><select name="assetBrand" id="assetBrand">
-							<option value="1">Choose option</option>
-							<option value="MackBook">MacBook</option>
-							<option value="Dell">Dell</option>
-							<option value="lenovo">lenovo</option>
-							<option value="Hp">Hp</option>
-							<option value="Asus">Asus</option>
-							
-					</select></td>
+					<th>Issue :*</th>
+					<td><input type="text" name="issueDesc" /></td>
+				</tr>
+				<tr> 
+					<th>ticket Raise Date:*</th>
+					<td><input type="date" name="ticketRaiseDate"></td>
 				</tr>
 				
-					<tr>
-					<th>Expire Date of Asset*:</th>
-					<td><input type="date" name="assetDate" /></td>
-				</tr>
 			</table>
 			<br>
 			<br>
 			<button type="submit" class="btn btn-success" name="Save">Save
 			</button>
 		</form>
-		<form action="/viewassetform">
-			<button type="submit "class="btn btn-danger" value="viewassetform" />View asset</button>
+		<form action="/">
+			<button type="submit "class="btn btn-danger" value="" />View ticket</button>
 		</form>
 	</div>
 

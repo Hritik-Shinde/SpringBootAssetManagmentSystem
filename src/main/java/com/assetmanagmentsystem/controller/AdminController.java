@@ -1,7 +1,5 @@
 package com.assetmanagmentsystem.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.assetmanagmentsystem.bean.EmployeeBean;
 import com.assetmanagmentsystem.model.Admin;
 import com.assetmanagmentsystem.model.Asset;
 import com.assetmanagmentsystem.model.Employee;
@@ -43,6 +40,7 @@ public class AdminController {
 	 {
 		  ModelAndView mav = new ModelAndView("login");
 		  mav.addObject("admin", new Admin());
+		  mav.addObject("employee",new Employee());
 		  return mav; 
 	 }
 	//dashboard
@@ -53,15 +51,21 @@ public class AdminController {
 				mv = new ModelAndView("error");
 			 return mv;
 		}else {
-			List<EmployeeBean> empList = employeeService.viewAllEmployee();
-			 mv = new ModelAndView("viewEmployee");
-			 System.out.println(empList);
-			 m.addAttribute("empList",empList);
 			 return mv;
 		}
 		
-		
 	}
+	//employeedashboard
+	/*
+	 * @PostMapping(value = "/empdashboard") public ModelAndView
+	 * viewempDashBoard(@ModelAttribute("employee") Employee employee,ModelAndView
+	 * mv,Model m) { Employee
+	 * employee2=employeeService.findByEmployeeNameAndPassword(employee.getEmailId()
+	 * ,employee.getPassword()); if(employee2==null) { mv = new
+	 * ModelAndView("error"); return mv; }else { return mv; }
+	 * 
+	 * }
+	 */
 	@RequestMapping(value = "/employeeregestrationform")
 	public ModelAndView employeeRegestration(ModelAndView mv ,Model m) {
 		m.addAttribute("command", new Employee());
@@ -78,6 +82,12 @@ public class AdminController {
 		m.addAttribute("command", new Asset());
 		return mv;
 	}
+	@RequestMapping(value = "/status")
+	public ModelAndView status(ModelAndView mv ,Model m) {
+		m.addAttribute("command", new Asset());
+		return mv;
+	}
+
 //	@GetMapping("/index")
 //	public ModelAndView home(ModelAndView mv ,Model m) // model usse for adding attributes
 //	{

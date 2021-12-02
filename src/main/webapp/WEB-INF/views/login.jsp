@@ -225,7 +225,7 @@ form .btn input[type="submit"] {
 }
 
 body {
-	background-image: url("./images/login1.jpg");
+	background-image: url("./images/img2.jpg");
 	height: 100vh;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -234,6 +234,7 @@ body {
 }
 </style>
 </head>
+<body>
 <body>
 
 	<h1 style="margin-left: 700px; margin-right: 0; color: white;">${message}</h1>
@@ -246,35 +247,37 @@ body {
 		</div>
 		<div class="form-container">
 			<div class="slide-controls">
-				<input type="radio" name="slide" id="login" checked> <input
-					type="radio" name="slide" id="signup"> <label for="login"
-					class="slide login">Admin</label> <label for="signup"
-					class="slide signup">Emplyoee</label>
+				<input type="radio" name="slide" id="login" checked value='Admin'>
+				<input type="radio" name="slide" id="signup" value='Employee'>
+				<label for="login" class="slide login">Admin </label> <label
+					for="signup" class="slide signup">Emplyoee </label>
 				<div class="slider-tab"></div>
 			</div>
 			<div class="form-inner">
 
-				 <form action="/dashboard" th:action="@{/dashboard}" th:object="${admin}" method="post">
+				<form action="/dashboard" th:action="@{/dashboard}"
+					th:object="${admin}" method="post">
 					<div class="field">
-					  <input type="text"  name="adminName" th:field="*{adminName}" class="form-control" />
+						<input type="text" name="adminName" th:field="*{adminName}"
+							class="form-control" />
 					</div>
 					<div class="field">
-					
-						<td><input  name="password"  type="password" th:field="*{password}"
-							class="form-control" /></td>
+
+						<td><input name="password" type="password"
+							th:field="*{password}" class="form-control" /></td>
 					</div>
 					<div class="field btn">
-						<div class="btn-layer"></div>
-						<input type="submit" value="Login">
+						<div class="btn-layer">
+						<input type="hidden" id="role" ></div>
+						<input type="submit" onclick="check()"  value="Login">
 					</div>
 					<div class="signup-link">
-						<!---- Not a member? <a href="">Signup now</a>   -->
-					</div>
+						 <a href="/empdashboard">Signup now</a> 
+						 <div class="field">
 				</form>
-				
+
 			</div>
-			<br>
-			<br>
+			<br> <br>
 			<%-- <form action="/empdashboard" class="employeelogin">
 					<div class="field">
 						<input type="text" placeholder="Email Address" required>
@@ -307,6 +310,15 @@ body {
            signupBtn.click();
            return false;
          });
+         
+         function check(){
+        	 var getLogger = document.querySelector('input[name="slide"]:checked').value;
+        	 var admin=document.getElementById("role");
+        	 document.getElementById("role").innerHTML = getLogger;
+/*         	 var logger = "admin";
+ */        	 alert('test'+getLogger);
+ 			
+         }
       </script>
 </body>
 </html>

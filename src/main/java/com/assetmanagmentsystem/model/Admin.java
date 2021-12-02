@@ -21,6 +21,7 @@ public class Admin {
 	private String userId;
 	@Column(name ="password")
 	private String password;
+	private String type;
 
 	public String getUserId() {
 		return userId;

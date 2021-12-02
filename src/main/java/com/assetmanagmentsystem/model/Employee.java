@@ -20,7 +20,7 @@ public class Employee {
 	@Column(name = "empLastName")
 	private String empLastName;
 	@Column(name = "mobileNo")
-	private int mobileNo;
+	private long mobileNo;
 //	@Column(name = "materialStatus")
 //	private String materialStatus;
 	@Column(name = "dateOBPlace")
@@ -65,10 +65,10 @@ public class Employee {
 	public void setEmpLastName(String empLastName) {
 		this.empLastName = empLastName;
 	}
-	public int getMobileNo() {
+	public long getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(int mobileNo) {
+	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 //	public String getMaterialStatus() {

@@ -11,7 +11,7 @@ import java.sql.Date;
 
 public class EmployeeBean {
 	private int empId;
-	private int mobileNo;
+	private long mobileNo;
 	private String empName;
 	private String empLastName;
 //	private String materialStatus;
@@ -28,10 +28,10 @@ public class EmployeeBean {
 	private String dateOB; 
 	private Date joiningDate;
 	
-	public int getMobileNo() {
+	public long getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(int mobileNo) {
+	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 	public String getEmpLastName() {

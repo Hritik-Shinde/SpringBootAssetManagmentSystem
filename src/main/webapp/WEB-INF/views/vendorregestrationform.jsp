@@ -71,9 +71,9 @@ input, select {
 					<th>Country:*</th>
 					<td><select name="country" id="country">
 							<option value="1">Choose option</option>
-							<option value="IN">INDIA</option>
+							<option value="INDIA">INDIA</option>
 							<option value="US">US</option>
-							<option value="ZA">South Africa</option>
+							<option value="SOUTHAFRICA">South Africa</option>
 
 					</select></td>
 				</tr>
@@ -100,6 +100,9 @@ input, select {
 			<br>
 			<button type="submit" class="btn btn-success" name="Save">Save
 			</button>
+		</form>
+		<form action="/viewvenderform">
+			<button type="submit "class="btn btn-danger" value="viewvenderform" />View vender</button>
 		</form>
 	</div>
 

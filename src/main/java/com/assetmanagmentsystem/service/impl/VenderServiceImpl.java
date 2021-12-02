@@ -1,5 +1,6 @@
 package com.assetmanagmentsystem.service.impl;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -8,12 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import com.assetmanagmentsystem.bean.EmployeeBean;
 import com.assetmanagmentsystem.bean.VenderBean;
-import com.assetmanagmentsystem.mapper.AdminMapper;
 import com.assetmanagmentsystem.mapper.VenderMapper;
+import com.assetmanagmentsystem.model.Employee;
 import com.assetmanagmentsystem.model.Vender;
-import com.assetmanagmentsystem.repositry.AdminRepositry;
 import com.assetmanagmentsystem.repositry.VenderRepositry;
 import com.assetmanagmentsystem.service.VenderService;
 
@@ -22,7 +21,7 @@ public class VenderServiceImpl implements VenderService {
 
 	@Autowired
 	private VenderRepositry venderRepositry;
-	
+
 	@Autowired
 	private VenderMapper venderMapper;
 
@@ -58,14 +57,16 @@ public class VenderServiceImpl implements VenderService {
 		return employeeBean;
 	}
 
-	@Override
-	public void editVender(VenderBean venderBean) {
-		// TODO Auto-generated method stub
-		Optional<Vender> adminOptional = venderRepositry.findById(venderBean.getVenderId());
-		if (adminOptional.isPresent()) {
-			Vender vender = adminOptional.get();
 
-			venderRepositry.save(vender);
+
+	@Override
+	public void deletevender(int venderId) {
+		// TODO Auto-generated method stub
+		Optional<Vender> venderOptional = venderRepositry.findById(venderId);
+		if (venderOptional.isPresent()) {
+			Vender vender = venderOptional.get();
+
+			venderRepositry.delete(vender);
 		}
 
 	}
@@ -74,6 +75,32 @@ public class VenderServiceImpl implements VenderService {
 	public String modifyVenderStatus(int venderId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Vender getVenderById(int id) {
+		Vender vender = venderRepositry.getById(id);
+		return vender;
+	}
+
+	@Override
+	public void updateVender(int id, VenderBean venderBean) {
+		// TODO Auto-generated method stub
+		Optional<Vender> venOptional = venderRepositry.findById(id);
+		if(venOptional.isPresent()) {
+			Vender vender = venOptional.get();
+			vender.setVenderName(venderBean.getVenderName());
+			vender.setVenderLastName(venderBean.getVenderLastName());
+			vender.setVenderMobileNo(venderBean.getVenderMobileNo());
+			vender.setCountry(venderBean.getCountry());
+			vender.setState(venderBean.getState());
+			vender.setCity(venderBean.getCity());
+			vender.setAddress(venderBean.getAddress());
+			vender.setVenderemailId(venderBean.getVenderemailId());
+			vender.setVenderStatus(venderBean.getVenderStatus());
+			venderRepositry.save(vender);
+		}
+		
+		
 	}
 
 }

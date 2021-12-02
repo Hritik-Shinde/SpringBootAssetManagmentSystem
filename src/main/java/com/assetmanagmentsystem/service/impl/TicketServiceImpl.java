@@ -3,13 +3,15 @@ package com.assetmanagmentsystem.service.impl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.assetmanagmentsystem.bean.TicketBean;
 import com.assetmanagmentsystem.mapper.TicketMapper;
+import com.assetmanagmentsystem.model.Employee;
 import com.assetmanagmentsystem.model.Ticket;
 import com.assetmanagmentsystem.repositry.TicketRepositry;
 import com.assetmanagmentsystem.service.TicketService;
-
+@Service
 public class TicketServiceImpl implements TicketService {
 
 	@Autowired
@@ -17,11 +19,11 @@ public class TicketServiceImpl implements TicketService {
 	@Autowired
 	private TicketMapper ticketMapper;
 
-	@Override
-	public void addTicket(TicketBean ticketBean) {
-		// TODO Auto-generated method stub
-		Ticket ticket = ticketMapper.maptoEntity(ticketBean);
+	public String addTicket(Ticket ticket) {
+		// TODO Auto-generated method stub\
+		System.out.println("service methord"+ticket);
 		ticketRepositry.save(ticket);
+		return "sucess";
 	}
 
 	@Override

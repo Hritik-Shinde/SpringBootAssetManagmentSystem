@@ -11,6 +11,13 @@ public class TicketBean {
 	private String status;
 	private Date ticketRaiseDate;
 	private Date dateModify;
+	private String issueDesc;
+	public String getIssueDesc() {
+		return issueDesc;
+	}
+	public void setIssueDesc(String issueDesc) {
+		this.issueDesc = issueDesc;
+	}
 	public int getTicketId() {
 		return ticketId;
 	}

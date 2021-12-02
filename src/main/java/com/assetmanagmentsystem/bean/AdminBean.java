@@ -13,6 +13,7 @@ public class AdminBean {
 	private String adminName;
 	private String userId;
 	private String password;
+	
 	public String getUserId() {
 		return userId;
 	}

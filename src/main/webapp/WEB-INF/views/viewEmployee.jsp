@@ -26,25 +26,26 @@
 <jsp:include page="dashboard.jsp"></jsp:include>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-	<!--Navigation Bar -->
-		
+		<div class="container p-5">
 		<table class="table table-striped">
+			<thead class="bg-dark text-white">
+
 	
 				<tr>
 					<th >Id</th>
-					<th >First Name</th>
-					<th >last Name</th>
+					<th >Name</th>
+					<!-- <th >last Name</th> -->
 					<th >Email Id</th>
 					<th >Phone No</th>
-					<th >BloodGroup</th>
+					<!-- <th >BloodGroup</th> -->
 					<th >department</th>
-					<th >gender</th>
-					<th >address</th>
+					<th >password</th>
+					<!-- <th >address</th>
 					<th >country</th>
 					<th >state</th>
 					<th >city</th>
 					<th >DateOB</th>
-					<th >Birthplace</th>
+					<th >Birthplace</th> -->
 					<th >joiningDate</th>
 					<th>  Select  </th>
 				</tr>
@@ -53,30 +54,34 @@
 			<c:forEach items="${empList}" var="e">
 			
 				<tr>
-					<th> ${e.empId}</th>
-					<td> ${e.empName}</td>
-					<td> ${e.empLastName}</td>
+					<th> ${e.getEmpId()}</th>
+					<td> ${e.getEmpName()}</td>
+					<%-- <td> ${e.empLastName}</td> --%>
 					<td> ${e.emailId}</td>
 					<td> ${e.mobileNo}</td>
-					<td> ${e.bloodGroup}</td>
+					<%-- <td> ${e.bloodGroup}</td> --%>
 					<td> ${e.department}</td>
-					<td> ${e.gender}</td>
-					<td> ${e.address}</td>
+					<td> ${e.password}</td>
+					<%-- <td> ${e.address}</td>
 					<td> ${e.country}</td>
 					<td> ${e.state}</td>
 					<td> ${e.city}</td>
 					<td> ${e.dateOB}</td>
-					<td> ${e.dateOBPlace}</td>
+					<td> ${e.dateOBPlace}</td> --%>
 					<td> ${e.joiningDate}</td>
-					
+				
 					<td>
-					<a class="btn btn-sm btn-primary" href="/employeeregestrationform/${e.empId}">Edit</a>
-					<a class="btn btn-sm btn-danger" href="/delete/${e.empId}">Delete</a>
+					<a class="btn btn-sm btn-primary" href="/editEmp/${e.empId}">Edit</a>
+					<a class="btn btn-sm btn-danger" href="/deleteemployee/${e.empId}">Delete</a>
 					</td>
+					
 				</tr>
 				</c:forEach>
+				</thead>
+				
 		</table>
-
+			
+</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

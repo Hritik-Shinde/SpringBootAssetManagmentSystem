@@ -12,8 +12,12 @@ public interface VenderService {
 
 	List<VenderBean> viewAllVender();
 
-	void editVender(VenderBean venderBean);
+	void updateVender(int id, VenderBean venderBean);
 
 	String modifyVenderStatus(int venderId);
+	
+	void deletevender(int venderId);
+	
+	public Vender getVenderById(int id);
 
 }

@@ -12,8 +12,13 @@ public interface EmployeeService {
 
 	List<EmployeeBean> viewAllEmployee();
 
-	void editEmployee(EmployeeBean employeeBean);
+	void updateEmployee(int id, EmployeeBean employeeBean);
 
 	void deleteEmpolyee(int empId);
+
+	public Employee getEmployeeById(int id);
+	/*
+	 * Employee findByEmployeeNameAndPassword(String string, String string2);
+	 */
 
 }

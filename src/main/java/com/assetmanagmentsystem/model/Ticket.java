@@ -22,10 +22,18 @@ public class Ticket {
 	int assetId;
 	@Column(name = "status")
 	private String status;
+	@Column(name = "issueDesc")
+	private String issueDesc;
 	@Column(name = "ticketRaiseDate")
 	private Date ticketRaiseDate;
 	@Column(name = "dateModify")
 	private Date dateModify;
+	public String getIssueDesc() {
+		return issueDesc;
+	}
+	public void setIssueDesc(String issueDesc) {
+		this.issueDesc = issueDesc;
+	}
 	public int getTicketId() {
 		return ticketId;
 	}
