@@ -27,6 +27,14 @@ public ModelAndView registerEmp(ModelAndView mv, @ModelAttribute("emp") Employee
 
 	return mv;
 }
+//@PostMapping(value = "/delete/{id}")
+//public ModelAndView deleteEmp(ModelAndView mv, @ModelAttribute("emp") Employee emp)
+//{
+//	employeeService.deleteEmpolyee(id);
+//	mv = new ModelAndView("employeeregestrationform");
+//
+//	return mv;
+//}
 @PostMapping(value = "/empdashboard")
 public ModelAndView viewDashBoard(ModelAndView mv) {
 	return mv;

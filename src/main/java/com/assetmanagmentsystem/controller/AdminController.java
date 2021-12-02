@@ -1,5 +1,7 @@
 package com.assetmanagmentsystem.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.assetmanagmentsystem.bean.EmployeeBean;
 import com.assetmanagmentsystem.model.Admin;
 import com.assetmanagmentsystem.model.Asset;
 import com.assetmanagmentsystem.model.Employee;
@@ -44,15 +47,19 @@ public class AdminController {
 	 }
 	//dashboard
 	@PostMapping(value = "/dashboard")
-	public ModelAndView viewDashBoard(@ModelAttribute("admin") Admin admin) {
+	public ModelAndView viewDashBoard(@ModelAttribute("admin") Admin admin,ModelAndView mv,Model m) {
 		Admin admin2=adminService.findByAdminNameAndPassword(admin.getAdminName(),admin.getPassword());
 		if(admin2==null) {
-			 ModelAndView mav = new ModelAndView("error");
-			 return mav;
+				mv = new ModelAndView("error");
+			 return mv;
 		}else {
-			 ModelAndView mav = new ModelAndView("dashboard");
-			 return mav;
+			List<EmployeeBean> empList = employeeService.viewAllEmployee();
+			 mv = new ModelAndView("viewEmployee");
+			 System.out.println(empList);
+			 m.addAttribute("empList",empList);
+			 return mv;
 		}
+		
 		
 	}
 	@RequestMapping(value = "/employeeregestrationform")
@@ -71,6 +78,19 @@ public class AdminController {
 		m.addAttribute("command", new Asset());
 		return mv;
 	}
+//	@GetMapping("/index")
+//	public ModelAndView home(ModelAndView mv ,Model m) // model usse for adding attributes
+//	{
+//
+//		List<EmployeeBean> emp = employeeService.viewAllEmployee();
+//		m.addAttribute("emp", emp);
+//		return mv;
+//	}
+//	@RequestMapping(value = "/index")
+//	public ModelAndView index(ModelAndView mv ,Model m) {
+//		m.addAttribute("command", new Employee());
+//		return mv;
+//	}
 //	@RequestMapping(value = "/register")
 //	public ModelAndView employeeRegestration(@ModelAttribute("empBean") EmployeeBean empBean ) {
 //
