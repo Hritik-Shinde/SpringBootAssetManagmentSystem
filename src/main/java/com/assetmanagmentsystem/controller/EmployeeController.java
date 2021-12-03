@@ -29,7 +29,6 @@ public class EmployeeController {
 		String message2 = "emp added sucesfully";
 		mv.addObject(message2);
 		mv = new ModelAndView("employeeregestrationform");
-
 		return mv;
 	}
 	
@@ -57,9 +56,13 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/deleteemployee/{empId}")
-	public ModelAndView deleteEmployee(@PathVariable("empId") int empId, ModelAndView mv) {
+	public ModelAndView deleteEmployee(@PathVariable("empId") int empId, ModelAndView mv,Model m) {
 		employeeService.deleteEmpolyee(empId);
+		List<EmployeeBean> empList = employeeService.viewAllEmployee();
+		System.out.println(empList);
+		m.addAttribute("empList", empList);
 		mv = new ModelAndView("Delete");
+		
 		return mv;
 	}
 

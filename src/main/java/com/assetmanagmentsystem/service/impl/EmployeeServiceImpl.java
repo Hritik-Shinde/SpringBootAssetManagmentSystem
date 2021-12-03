@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -22,11 +24,14 @@ public class EmployeeServiceImpl implements EmployeeService{
 	private EmployeeRepositry employeeRepositry;
 	@Autowired
 	private EmployeeMapper employeeMapper;
+	@Autowired
+	private JavaMailSender javaMailSender;
 	@Override
 	public String addEmployee(Employee employee) {
 		// TODO Auto-generated method stub\
 		System.out.println("service methord"+employee);
 		employeeRepositry.save(employee);
+		sendMail(employee);
 		return "sucess";
 	}
 
@@ -114,5 +119,16 @@ public class EmployeeServiceImpl implements EmployeeService{
 	 * employeeRepositry.findByUserIdAndPassword(string,string2);
 	 * System.out.println(employee); return employee; }
 	 */
+	
+	 void sendMail(Employee emp) {
+		// TODO Auto-generated method stub
+		String mailTo = emp.getEmailId();
+		SimpleMailMessage msg = new SimpleMailMessage();
+		msg.setTo(mailTo);
+		msg.setSubject("Asset Management System");
+		msg.setText("Dear "+emp.getEmpName()+"\nWelocme to Krios\nplz login\nusername :\n"+emp.getEmailId()+"\npassword:\n"+emp.getPassword());
+		javaMailSender.send(msg);
+	
+	}
 
 }

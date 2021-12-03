@@ -17,5 +17,7 @@ public interface AdminService {
 	void deleteAdmin(int adminId);
 
 	Admin findByAdminNameAndPassword(String string, String string2);
+	
+//	void sendMail(Admin admin);
 
 }
