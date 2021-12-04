@@ -51,8 +51,20 @@ public class Employee {
 	private Date joiningDate;
 	@Column(name = "role")
 	private String role;
-	@Column(name = "asset")
-	private String asset;
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public Assert getAssets() {
+		return assets;
+	}
+	public void setAssets(Assert assets) {
+		this.assets = assets;
+	}
+	@Column (name = "assets")
+	private Assert assets;
 	public int getEmpId() {
 		return empId;
 	}
