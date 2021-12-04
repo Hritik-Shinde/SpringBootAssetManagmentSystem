@@ -1,6 +1,5 @@
 package com.assetmanagmentsystem.service.impl;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +12,6 @@ import org.springframework.util.CollectionUtils;
 
 import com.assetmanagmentsystem.bean.EmployeeBean;
 import com.assetmanagmentsystem.mapper.EmployeeMapper;
-import com.assetmanagmentsystem.model.Admin;
 import com.assetmanagmentsystem.model.Employee;
 import com.assetmanagmentsystem.repositry.EmployeeRepositry;
 import com.assetmanagmentsystem.service.EmployeeService;

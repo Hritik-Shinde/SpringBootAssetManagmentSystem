@@ -271,9 +271,7 @@ body {
 						<input type="hidden" id="role" ></div>
 						<input type="submit" onclick="check()"  value="Login">
 					</div>
-					<div class="signup-link">
-						 <a href="/empdashboard">Signup now</a> 
-						 <div class="field">
+					
 				</form>
 
 			</div>
@@ -311,14 +309,14 @@ body {
            return false;
          });
          
-         function check(){
+       /*   function check(){
         	 var getLogger = document.querySelector('input[name="slide"]:checked').value;
         	 var admin=document.getElementById("role");
         	 document.getElementById("role").innerHTML = getLogger;
 /*         	 var logger = "admin";
  */        	 alert('test'+getLogger);
  			
-         }
+         } */
       </script>
 </body>
 </html>

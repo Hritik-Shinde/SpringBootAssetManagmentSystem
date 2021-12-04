@@ -13,11 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.assetmanagmentsystem.bean.AssetBean;
-import com.assetmanagmentsystem.bean.EmployeeBean;
-import com.assetmanagmentsystem.bean.VenderBean;
 import com.assetmanagmentsystem.model.Asset;
-import com.assetmanagmentsystem.model.Employee;
-import com.assetmanagmentsystem.model.Vender;
 import com.assetmanagmentsystem.service.AssetService;
 @RestController
 public class AssetController {

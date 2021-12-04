@@ -60,12 +60,12 @@ input, select {
 			</table>
 			<br>
 			<br>
-			<button type="submit" class="btn btn-success" name="Save">Save
+			<button type="submit" class="btn btn-success" name="Save">Raise ticket
 			</button>
 		</form>
-		<form action="/">
+		<!-- <form action="/">
 			<button type="submit "class="btn btn-danger" value="" />View ticket</button>
-		</form>
+		</form> -->
 	</div>
 
 </body>

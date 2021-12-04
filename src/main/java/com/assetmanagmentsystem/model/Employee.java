@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.util.Assert;
 @Entity
 @Table(name = "Employee")
 public class Employee {
@@ -47,6 +49,10 @@ public class Employee {
 	private String dateOB;
 	@Column(name = "joiningDate")
 	private Date joiningDate;
+	@Column(name = "role")
+	private String role;
+	@Column(name = "asset")
+	private String asset;
 	public int getEmpId() {
 		return empId;
 	}

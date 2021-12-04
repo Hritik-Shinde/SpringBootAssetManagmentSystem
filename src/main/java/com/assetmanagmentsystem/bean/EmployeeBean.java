@@ -2,6 +2,8 @@ package com.assetmanagmentsystem.bean;
 
 import java.sql.Date;
 
+import org.springframework.util.Assert;
+
 /**
  * 
  * @author swati / Hritik
@@ -27,7 +29,21 @@ public class EmployeeBean {
 	private String password;
 	private String dateOB; 
 	private Date joiningDate;
+	private String role;
+	private Assert assets;
 	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public Assert getAssets() {
+		return assets;
+	}
+	public void setAssets(Assert assets) {
+		this.assets = assets;
+	}
 	public long getMobileNo() {
 		return mobileNo;
 	}

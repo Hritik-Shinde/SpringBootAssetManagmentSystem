@@ -30,7 +30,7 @@ public ModelAndView registerEmp(ModelAndView mv, @ModelAttribute("vender") Vende
 	VendereService.addVender(vender);
 	String message2 = "vender added sucesfully";
 	mv.addObject(message2);
-	mv = new ModelAndView("viewticketform");
+	mv = new ModelAndView("venderregister");
 
 	return mv;
 }

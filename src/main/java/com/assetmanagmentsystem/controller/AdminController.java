@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.assetmanagmentsystem.model.Admin;
 import com.assetmanagmentsystem.model.Asset;
 import com.assetmanagmentsystem.model.Employee;
+import com.assetmanagmentsystem.model.Ticket;
 import com.assetmanagmentsystem.model.Vender;
 import com.assetmanagmentsystem.service.AdminService;
 import com.assetmanagmentsystem.service.EmployeeService;
@@ -82,7 +83,7 @@ public class AdminController {
 		m.addAttribute("command", new Asset());
 		return mv;
 	}
-	@RequestMapping(value = "/status")
+	@RequestMapping(value = "/statusView")
 	public ModelAndView status(ModelAndView mv ,Model m) {
 		m.addAttribute("command", new Asset());
 		return mv;
@@ -206,5 +207,11 @@ public class AdminController {
 //		AdminBean adminBean = adminService.viewAdminById(adminId);
 //		return new ResponseEntity<>(adminBean, HttpStatus.OK);
 //	}
+	@RequestMapping(value = "/ticketCreationForm")
+	public ModelAndView ticketRegestration(ModelAndView mv ,Model m) {
+		m.addAttribute("command", new Ticket());
+		return mv;
+	}	
+	
 	
 }
