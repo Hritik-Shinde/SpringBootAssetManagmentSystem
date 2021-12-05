@@ -2,24 +2,30 @@ package com.assetmanagmentsystem.service;
 
 import java.util.List;
 
-import com.assetmanagmentsystem.bean.EmployeeBean;
-import com.assetmanagmentsystem.model.Admin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.assetmanagmentsystem.model.Employee;
+import com.assetmanagmentsystem.repositry.EmployeeRepositry;
 
-public interface EmployeeService {
-	String addEmployee(Employee employee);
+@Service
+public class EmployeeService {
 
-	EmployeeBean viewEmployeeById(int empId);
+	@Autowired
+	private EmployeeRepositry employeeRepositry;
 
-	List<EmployeeBean> viewAllEmployee();
+	public Employee getEmployeeEmailAndPasseord(String emailId, String password) {
+		return employeeRepositry.findByEmailIdAndPassword(emailId, password);
+	}
 
-	void updateEmployee(int id, EmployeeBean employeeBean);
+	public Employee addEmployee(Employee employee) {
+		
+		return employeeRepositry.save(employee);
+	}
 
-	void deleteEmpolyee(int empId);
-
-	public Employee getEmployeeById(int id);
-	/*
-	 * Employee findByEmployeeNameAndPassword(String string, String string2);
-	 */
+	public List<Employee> getAllEmployee() {
+		
+		return employeeRepositry.findByRole("Employee");
+	}
 
 }

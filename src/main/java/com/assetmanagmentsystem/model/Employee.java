@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import org.springframework.util.Assert;
 @Entity
 @Table(name = "Employee")
@@ -51,20 +50,21 @@ public class Employee {
 	private Date joiningDate;
 	@Column(name = "role")
 	private String role;
+	@Column (name = "assets")
+	private String assets;
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public Assert getAssets() {
+	public String getAssets() {
 		return assets;
 	}
-	public void setAssets(Assert assets) {
+	public void setAssets(String assets) {
 		this.assets = assets;
 	}
-	@Column (name = "assets")
-	private Assert assets;
+	
 	public int getEmpId() {
 		return empId;
 	}

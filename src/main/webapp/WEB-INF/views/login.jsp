@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>Login </title>
 <style>
 * {
 	margin: 0;
@@ -246,48 +246,33 @@ body {
 			<div class="title signup">Login Form</div>
 		</div>
 		<div class="form-container">
-			<div class="slide-controls">
-				<input type="radio" name="slide" id="login" checked value='Admin'>
-				<input type="radio" name="slide" id="signup" value='Employee'>
-				<label for="login" class="slide login">Admin </label> <label
-					for="signup" class="slide signup">Emplyoee </label>
-				<div class="slider-tab"></div>
-			</div>
+
 			<div class="form-inner">
 
 				<form action="/dashboard" th:action="@{/dashboard}"
-					th:object="${admin}" method="post">
+					th:object="${employee}" method="post">
 					<div class="field">
-						<input type="text" name="adminName" th:field="*{adminName}"
+						<input type="text" name="emailId" th:field="*{emailId}"
 							class="form-control" />
 					</div>
 					<div class="field">
 
 						<td><input name="password" type="password"
 							th:field="*{password}" class="form-control" /></td>
+
 					</div>
 					<div class="field btn">
 						<div class="btn-layer">
-						<input type="hidden" id="role" ></div>
-						<input type="submit" onclick="check()"  value="Login">
+							<input type="hidden" id="role">
+						</div>
+						<input type="submit" onclick="check()" value="Login">
 					</div>
-					
+
 				</form>
 
 			</div>
 			<br> <br>
-			<%-- <form action="/empdashboard" class="employeelogin">
-					<div class="field">
-						<input type="text" placeholder="Email Address" required>
-					</div>
-					<div class="field">
-						<input type="password" placeholder="Password" required>
-					</div>
-					<div class="field btn">
-						<div class="btn-layer"></div>
-						<input type="submit" value="Login">
-					</div>
-				</form> --%>
+
 		</div>
 	</div>
 	<script>
@@ -309,14 +294,14 @@ body {
            return false;
          });
          
-       /*   function check(){
-        	 var getLogger = document.querySelector('input[name="slide"]:checked').value;
-        	 var admin=document.getElementById("role");
-        	 document.getElementById("role").innerHTML = getLogger;
-/*         	 var logger = "admin";
- */        	 alert('test'+getLogger);
+//         function check(){
+//         	 var getLogger = document.querySelector('input[name="slide"]:checked').value;
+//         	 var admin=document.getElementById("role");
+//         	 document.getElementById("role").innerHTML = getLogger;
+// /*         	 var logger = "admin";
+//  */        	 alert('test'+getLogger);
  			
-         } */
+//          } */
       </script>
 </body>
 </html>

@@ -23,7 +23,7 @@
 </style>
 
 <body style='background-color: red:purple; background-image:url("/images/empRegBackground.jpg")'>
-<jsp:include page="dashboard.jsp"></jsp:include>
+<jsp:include page="adminDashboard.jsp"></jsp:include>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 		<div class="container p-5">
@@ -72,6 +72,7 @@
 				
 					<td>
 					<a class="btn btn-sm btn-primary" href="/editEmp/${e.empId}">Edit</a>
+					<button onclick="myFunction("'${e.empId}'")">Click me</button>
 					<a class="btn btn-sm btn-danger" href="/deleteemployee/${e.empId}">Delete</a>
 					</td>
 					
