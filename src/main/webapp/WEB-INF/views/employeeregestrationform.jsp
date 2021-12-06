@@ -28,10 +28,11 @@
 						<form action="/register" th:action="@{/register}"
 							th:object="${employee}" method="post">
 							<div class="form-group">
-								<label>Enter First Name Of Employee</label> <input type="text"
-									class="form-control" name="empName" th:field="*{empName}"
-									class="form-control" />
+								<label>Enter First Name Of Employee</label> 
+								<input type="text" class="form-control" name="empName" th:field="*{empName}" class="form-control" />
 							</div>
+							
+							
 							<div class="form-group">
 								<label>Enter Last Name Of Employee</label> <input type="text"
 									class="form-control" name="empLastName"

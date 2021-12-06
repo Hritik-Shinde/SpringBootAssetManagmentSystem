@@ -23,18 +23,19 @@ public class EmployeeController {
 
 	@GetMapping("/")
 	public ModelAndView login() {
-		ModelAndView mav = new ModelAndView("login");
+		ModelAndView mav = new ModelAndView("login1");
 		mav.addObject("employee", new Employee());
 		return mav;
 	}
 
 	// dashboard
 	@PostMapping(value = "/dashboard")
-	public ModelAndView viewDashBoard(@ModelAttribute("employee") Employee employee, ModelAndView mv, Model m) {
+	public ModelAndView viewDashBoard(@ModelAttribute("employee") Employee employee) {
 		Employee employee2 = employeeService.getEmployeeEmailAndPasseord(employee.getEmailId(), employee.getPassword());
+		ModelAndView mv;
 		if (employee2 != null) {
 			if (employee2.getRole().equalsIgnoreCase("Admin")) {
-				mv = new ModelAndView("adminDashboard");
+				mv = new ModelAndView("index");
 			} else {
 				mv = new ModelAndView("employeeDashboard");
 			}
@@ -51,6 +52,7 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/employeeregestrationform")
 	public ModelAndView employeeRegestration(ModelAndView mv ,Model m) {
+//		mv=new ModelAndView("forms");
 		m.addAttribute("employee", new Employee());
 		return mv;
 	}
@@ -91,11 +93,11 @@ public class EmployeeController {
 //
 //	}
 
-//	@PostMapping("/employee")
-//	public Employee AddEmployee(@RequestBody Employee employee) {
-//		System.out.println(employee);
-//		return employeeService.addEmployee(employee);
-//	}
+	@PostMapping("/employee")
+	public Employee AddEmployee(@RequestBody Employee employee) {
+		System.out.println(employee);
+		return employeeService.addEmployee(employee);
+	}
 
 //	// dashboard
 //	@PostMapping(value = "/dashboard")
