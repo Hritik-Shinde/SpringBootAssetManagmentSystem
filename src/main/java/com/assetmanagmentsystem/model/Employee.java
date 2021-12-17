@@ -2,12 +2,23 @@ package com.assetmanagmentsystem.model;
 
 import java.sql.Date;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
+/**
+ * 
+ * @author HritikShinde
+ *
+ */
 @Entity
 @Table(name = "Employee")
 public class Employee {
@@ -20,11 +31,7 @@ public class Employee {
 	@Column(name = "empLastName")
 	private String empLastName;
 	@Column(name = "mobileNo")
-	private int mobileNo;
-//	@Column(name = "materialStatus")
-//	private String materialStatus;
-	@Column(name = "dateOBPlace")
-	private String dateOBPlace;
+	private long mobileNo;
 	@Column(name = "bloodGroup")
 	private String bloodGroup;
 	@Column(name = "department")
@@ -47,6 +54,17 @@ public class Employee {
 	private String dateOB;
 	@Column(name = "joiningDate")
 	private Date joiningDate;
+	@Column(name = "role")
+	private String role;
+
+
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	public int getEmpId() {
 		return empId;
 	}
@@ -65,24 +83,13 @@ public class Employee {
 	public void setEmpLastName(String empLastName) {
 		this.empLastName = empLastName;
 	}
-	public int getMobileNo() {
+	public long getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(int mobileNo) {
+	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
-//	public String getMaterialStatus() {
-//		return materialStatus;
-//	}
-//	public void setMaterialStatus(String materialStatus) {
-//		this.materialStatus = materialStatus;
-//	}
-	public String getDateOBPlace() {
-		return dateOBPlace;
-	}
-	public void setDateOBPlace(String dateOBPlace) {
-		this.dateOBPlace = dateOBPlace;
-	}
+
 	public String getBloodGroup() {
 		return bloodGroup;
 	}
@@ -152,7 +159,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empLastName=" + empLastName + ", mobileNo="
-				+ mobileNo + ", dateOBPlace=" + dateOBPlace + ", bloodGroup="
+				+ mobileNo + ", dateOBPlace="  + ", bloodGroup="
 				+ bloodGroup + ", department=" + department + ", gender=" + gender + ", country=" + country + ", state="
 				+ state + ", city=" + city + ", address=" + address + ", emailId=" + emailId + ", password=" + password
 				+ ", dateOB=" + dateOB + ", joiningDate=" + joiningDate + "]";

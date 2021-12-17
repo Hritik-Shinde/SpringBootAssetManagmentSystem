@@ -9,6 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+/**
+ * 
+ * @author HritikShinde
+ *
+ */
 @Entity
 @Table(name = "Ticket")
 public class Ticket {
@@ -22,10 +27,19 @@ public class Ticket {
 	int assetId;
 	@Column(name = "status")
 	private String status;
+	@Column(name = "issueDesc")
+	private String issueDesc;
 	@Column(name = "ticketRaiseDate")
 	private Date ticketRaiseDate;
 	@Column(name = "dateModify")
 	private Date dateModify;
+	
+	public String getIssueDesc() {
+		return issueDesc;
+	}
+	public void setIssueDesc(String issueDesc) {
+		this.issueDesc = issueDesc;
+	}
 	public int getTicketId() {
 		return ticketId;
 	}

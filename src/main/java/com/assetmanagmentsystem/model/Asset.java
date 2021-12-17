@@ -9,7 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * 
+ * @author HritikShinde/swati
+ *
+ */
 @Entity
 @Table(name = "Asset")
 public class Asset {
@@ -17,15 +21,43 @@ public class Asset {
 	@Column(name = "assetId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int assetId;
+	
 	@Column(name = "typeOfAsset")
 	private String typeOfAsset;
+	
 	@Column(name = "avaliablecount")
 	private String avaliablecount;
+	
 	@Column(name = "assetBrand")
 	private String assetBrand;
+	
 	@Column(name="assetexpiredate")
 	private Date assetDate;
 	
+	@Column(name="empName")
+	private String empName;
+	
+	@Column(name="empId")
+	private int empId;
+	
+	@Column(name="kriosProductId")
+	private String kriosProductId;
+	
+	@Column(name="productId")
+	private String productId;
+	
+	public String getKriosProductId() {
+		return kriosProductId;
+	}
+	public void setKriosProductId(String kriosProductId) {
+		this.kriosProductId = kriosProductId;
+	}
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
 	public Date getAssetDate() {
 		return assetDate;
 	}
@@ -64,24 +96,18 @@ public class Asset {
 	public void setVendorId(int vendorId) {
 		this.vendorId = vendorId;
 	}
-	@Override
-	public String toString() {
-		return "Asset [assetId=" + assetId + ", typeOfAsset=" + typeOfAsset + ", avaliablecount=" + avaliablecount
-				+ ", vendorId=" + vendorId + "]";
+
+	public String getEmpName() {
+		return empName;
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(assetId, avaliablecount, typeOfAsset, vendorId);
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Asset))
-			return false;
-		Asset other = (Asset) obj;
-		return assetId == other.assetId && Objects.equals(avaliablecount, other.avaliablecount)
-				&& Objects.equals(typeOfAsset, other.typeOfAsset) && vendorId == other.vendorId;
+	public int getEmpId() {
+		return empId;
+	}
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
 	
 

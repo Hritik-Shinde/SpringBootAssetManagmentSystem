@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<title>Login</title>
 <style>
 * {
 	margin: 0;
@@ -225,68 +225,55 @@ form .btn input[type="submit"] {
 }
 
 body {
-	background-image: url("./images/login1.jpg");
+	background-image: url("./images/img2.jpg");
 	height: 100vh;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
+	
 }
 </style>
 </head>
 <body>
+<body>
 
 	<h1 style="margin-left: 700px; margin-right: 0; color: white;">${message}</h1>
 	<div class="wrapper"
-		style="margin-top: -100px; margin-left: 700px; margin-right: 0;">
+		style="margin-top: -300px; margin-left: 900px; margin-right: 0; opacity: 0.90;">
 
 		<div class="title-text">
 			<div class="title login">Login Form</div>
 			<div class="title signup">Login Form</div>
 		</div>
 		<div class="form-container">
-			<div class="slide-controls">
-				<input type="radio" name="slide" id="login" checked> <input
-					type="radio" name="slide" id="signup"> <label for="login"
-					class="slide login">Admin</label> <label for="signup"
-					class="slide signup">Emplyoee</label>
-				<div class="slider-tab"></div>
-			</div>
+
 			<div class="form-inner">
 
-				 <form action="/dashboard" th:action="@{/dashboard}" th:object="${admin}" method="post">
+				<form action="/dashboard" th:action="@{/dashboard}"
+					th:object="${employee}" method="post">
 					<div class="field">
-					  <input type="text"  name="adminName" th:field="*{adminName}" class="form-control" />
+						<input type="text" name="emailId" th:field="*{emailId}"
+							class="form-control" />
 					</div>
 					<div class="field">
-					
-						<td><input  name="password"  type="password" th:field="*{password}"
-							class="form-control" /></td>
+
+						<td><input name="password" type="password"
+							th:field="*{password}" class="form-control" /></td>
+
 					</div>
 					<div class="field btn">
-						<div class="btn-layer"></div>
-						<input type="submit" value="Login">
+						<div class="btn-layer">
+							<input type="hidden" id="role">
+						</div>
+						<input type="submit" onclick="check()" value="Login">
 					</div>
-					<div class="signup-link">
-						<!---- Not a member? <a href="">Signup now</a>   -->
-					</div>
+
 				</form>
-				
+
 			</div>
-			<br>
-			<br>
-			<%-- <form action="/empdashboard" class="employeelogin">
-					<div class="field">
-						<input type="text" placeholder="Email Address" required>
-					</div>
-					<div class="field">
-						<input type="password" placeholder="Password" required>
-					</div>
-					<div class="field btn">
-						<div class="btn-layer"></div>
-						<input type="submit" value="Login">
-					</div>
-				</form> --%>
+			<br> <br>
+
 		</div>
 	</div>
 	<script>
@@ -307,6 +294,15 @@ body {
            signupBtn.click();
            return false;
          });
+         
+//         function check(){
+//         	 var getLogger = document.querySelector('input[name="slide"]:checked').value;
+//         	 var admin=document.getElementById("role");
+//         	 document.getElementById("role").innerHTML = getLogger;
+// /*         	 var logger = "admin";
+//  */        	 alert('test'+getLogger);
+ 			
+//          } */
       </script>
 </body>
 </html>

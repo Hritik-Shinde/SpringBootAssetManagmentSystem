@@ -69,13 +69,14 @@ input, select {
 				
 				<tr>
 					<th>Asset Brand :*</th>
-					<td><select name="venderStatus" id="assetBrand">
+					<td><select name="assetBrand" id="assetBrand">
 							<option value="1">Choose option</option>
-							<option value="Hp">MacBook</option>
+							<option value="MackBook">MacBook</option>
 							<option value="Dell">Dell</option>
-							<option value="Hp">lenovo</option>
-							<option value="Hp">Acer</option>
-							<option value="Hp">Asus</option>
+							<option value="lenovo">lenovo</option>
+							<option value="Hp">Hp</option>
+							<option value="Asus">Asus</option>
+							
 					</select></td>
 				</tr>
 				
@@ -88,6 +89,9 @@ input, select {
 			<br>
 			<button type="submit" class="btn btn-success" name="Save">Save
 			</button>
+		</form>
+		<form action="/viewassetform">
+			<button type="submit "class="btn btn-danger" value="viewassetform" />View asset</button>
 		</form>
 	</div>
 

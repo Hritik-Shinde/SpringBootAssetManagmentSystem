@@ -1,13 +1,45 @@
 package com.assetmanagmentsystem.service;
 
-import com.assetmanagmentsystem.bean.AssetBean;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.assetmanagmentsystem.model.Asset;
+import com.assetmanagmentsystem.model.Employee;
+import com.assetmanagmentsystem.repositry.AssetRepositry;
+/**
+ * 
+ * @author HritikShinde
+ *
+ */
+@Service
+public class AssetService {
 
-
-public interface AssetService {
-	String addAsset(Asset asset);
-
-	AssetBean viewAssetById(int empId);
-
-	void deleteAsset(int assetId);
+	@Autowired
+	private AssetRepositry assetRepositry;
+	public Asset addEmployee(Asset asset) {
+		return assetRepositry.save(asset);
+		
+		
+	}
+	public List<Asset> getAllAssets() {
+		return assetRepositry.findAll();
+	}
+	public Boolean deleteasset(int assetId) {
+		// TODO Auto-generated method stub
+		assetRepositry.deleteById(assetId);
+		return true;
+	
+	}
+	public Asset getAssetById(Integer assetId) {
+		Asset asset = assetRepositry.getById(assetId);
+		return asset;
+	}
+	
+	public Asset updateAsset(int assetId, Asset asset)
+	{
+		return assetRepositry.save(asset);
+	}
+	
 }
